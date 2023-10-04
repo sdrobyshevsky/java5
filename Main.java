@@ -1,7 +1,3 @@
-import gamefiles.Answer;
-import gamefiles.GameStatus;
-import gamefiles.Menu;
-import gamefiles.NumberGame;
 import java.util.Scanner;
 
 public class Main 
@@ -10,10 +6,9 @@ public class Main
     {
         Menu.printUserMenu();
         NumberGame numberGame = new NumberGame();
-        try (Scanner scanner = new Scanner(System.in)) 
-        {
+        Scanner scanner = new Scanner(System.in); 
             numberGame.start(scanner.nextInt(), scanner.nextInt());
-            // scanner.nextLine();
+            scanner.nextLine();
             while (!numberGame.getGameStatus().equals(GameStatus.FINISH))
             {
                 String value = scanner.nextLine();
@@ -24,6 +19,6 @@ public class Main
                 }
                 System.out.println(numberGame.getMoveHistory());
             }
-        }
+        
     }
 }
