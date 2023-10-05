@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -7,7 +8,7 @@ public abstract class AbstractGame implements Game {
     int currentTry;
     String computerWord;
     GameStatus gameStatus = GameStatus.INIT;
-    List<String> moveHistory; // список для истории
+    List<String> moveHistory = new ArrayList<>(); // список для истории
 
     // метод для работы с историей
     public List<String> getMoveHistory() {
