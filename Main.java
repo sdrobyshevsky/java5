@@ -6,7 +6,7 @@ public class Main
     {
         Menu.printUserMenu();
         NumberGame numberGame = new NumberGame();
-        Scanner scanner = new Scanner(System.in); 
+        try (Scanner scanner = new Scanner(System.in)) {
             numberGame.start(scanner.nextInt(), scanner.nextInt());
             scanner.nextLine();
             while (!numberGame.getGameStatus().equals(GameStatus.FINISH))
@@ -19,6 +19,7 @@ public class Main
                 }
                 System.out.println(numberGame.getMoveHistory());
             }
+        }
         
     }
 }
